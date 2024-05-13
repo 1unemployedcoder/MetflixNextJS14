@@ -1,0 +1,16 @@
+.link {
+    padding: 10px;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 20px;
+}
+
+.link:hover {
+    background-color: var(--text);
+    color: var(--bg);
+}
+
+.linkActive {
+    background-color: var(--text);
+    color: var(--bg);
+}
