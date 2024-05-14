@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import cl from "./NavLink.module.css";
+import { NavLinkProps } from "@/@types/PropsTypes";
 const NavLink: React.FC<NavLinkProps> = ({ link }) => {
   const pathName = usePathname();
   return (

@@ -6,6 +6,7 @@ const Links = () => {
   const links: linkType[] = [
     { href: "/", name: "Home" },
     { href: "/films", name: "Films" },
+    { href: "/news", name: "News" },
   ];
   const session = false;
   const isAdmin = false;
