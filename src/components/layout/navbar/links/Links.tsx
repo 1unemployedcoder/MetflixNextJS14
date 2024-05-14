@@ -5,10 +5,9 @@ import { Button } from "@/components/ui/button/Button";
 const Links = () => {
   const links: linkType[] = [
     { href: "/", name: "Home" },
-    { href: "/about", name: "About" },
-    { href: "/contact", name: "Contact" },
+    { href: "/films", name: "Films" },
   ];
-  const session = true;
+  const session = false;
   const isAdmin = false;
   return (
     <div className={cl.links}>
