@@ -2,13 +2,12 @@ import { TypeFilms, TypeNews } from "@/@types/AsyncTypes";
 import cl from "./HomePage.module.css";
 import { getFilms, getNews } from "@/API/FetchService";
 import Image from "next/image"
-
+import { Button } from "@/components/ui/button/Button";
+import Link from "next/link";
 const Home = async () => {
   const newsData = getNews()
   const filmsData = getFilms()
-  const [newsFetch, filmsFetch] = await Promise.all([newsData, filmsData])
-  const news = newsFetch.items as unknown as TypeNews[]
-  const films = filmsFetch.items as unknown as TypeFilms[]
+  const [news, films]: [TypeNews[], TypeFilms[]] = await Promise.all([newsData, filmsData])
   return (
     <div className={cl.container}>
       <div className={cl.newsContainer}>
@@ -16,16 +15,19 @@ const Home = async () => {
         {news.map(item => 
         <div key={item.kinopoiskId}>
           {item.title}
+          {new Date(item.publishedAt).toLocaleDateString()}
+          <Image alt={item.title} src={item.imageUrl} width={100} height={100} />
         </div>
         )}
       </div>
       <div className={cl.filmsContainer}>
         <h3>Фильмы сегодня: </h3>
         {films.map(item =>
-          <div key={item.imdbId}>
-            {item.nameOriginal}
+          <div key={item.kinopoiskId}>
+            {item.nameRu ?? item.nameOriginal}
             {item.ratingImdb}
-            <Image src={item.posterUrlPreview} alt={item.nameOriginal} width={100} height={100} />
+            <Image alt={item.nameRu ?? item.nameOriginal} src={item.posterUrlPreview} width={100} height={100} />
+            <Button><Link href={`/films/${item.kinopoiskId}`}>Смотреть</Link></Button>
           </div>
         )}
       </div>

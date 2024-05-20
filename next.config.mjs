@@ -5,6 +5,10 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'kinopoiskapiunofficial.tech'
+            },
+            {
+                protocol: 'https',
+                hostname: 'avatars.mds.yandex.net'
             }
         ]
     }

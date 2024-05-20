@@ -6,6 +6,8 @@ import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
 const inter = Inter({ subsets: ["latin"] });
 
+export const dynamicParams = false
+
 export const metadata: Metadata = {
   title: "FilmSearching",
   description: "FilmSearching practice app powered by NextJS",

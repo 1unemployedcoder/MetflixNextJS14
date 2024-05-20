@@ -22,6 +22,7 @@ export interface typeFetchedFilms {
 export interface TypeFilms {
     kinopoiskId: number
     imdbId: string
+    nameRu: string
     nameOriginal: string
     ratingImdb: number
     year: number
