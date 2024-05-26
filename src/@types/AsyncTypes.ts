@@ -28,3 +28,19 @@ export interface TypeFilms {
     year: number
     posterUrlPreview: string
 }
+
+export interface TypeFilm extends TypeFilms {
+    slogan: string
+    shortDescription: string
+}
+
+export interface TypeReview {
+    kinopoiskId: number
+    type: typeView
+    date: Date
+    positiveRating: number
+    negativeRating: number
+    author: string
+    title: string
+    description: string
+}

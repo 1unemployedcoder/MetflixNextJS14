@@ -26,7 +26,7 @@ const Home = async () => {
           <div key={item.kinopoiskId}>
             {item.nameRu ?? item.nameOriginal}
             {item.ratingImdb}
-            <Image alt={item.nameRu ?? item.nameOriginal} src={item.posterUrlPreview} width={100} height={100} />
+            <Image alt={item.nameRu || item.nameOriginal} src={item.posterUrlPreview} width={100} height={100} />
             <Button><Link href={`/films/${item.kinopoiskId}`}>Смотреть</Link></Button>
           </div>
         )}

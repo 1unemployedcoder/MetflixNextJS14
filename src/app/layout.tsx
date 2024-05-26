@@ -6,7 +6,7 @@ import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
 const inter = Inter({ subsets: ["latin"] });
 
-export const dynamicParams = false
+export const dynamicParams = true
 
 export const metadata: Metadata = {
   title: "FilmSearching",
