@@ -1,3 +1,4 @@
 .filmsContainer {
     display: flex;
+    flex-direction: column;
 }
