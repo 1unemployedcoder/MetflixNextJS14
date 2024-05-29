@@ -1,11 +1,12 @@
 "use client";
 import React, {useEffect, useState} from "react";
-import { usePathname, useRouter } from "next/navigation";
+import {usePathname, useRouter} from "next/navigation";
 import cl from "./Search.module.css";
-import { getSearchedFilm } from "@/API/FetchService";
+import {getSearchedFilm} from "@/API/FetchService";
 import Input from "@/components/ui/input/Input";
-import { Button } from "@/components/ui/button/Button";
-import { useDebounce } from "@/hooks/useDebounce";
+import {Button} from "@/components/ui/button/Button";
+import {useDebounce} from "@/hooks/useDebounce";
+
 const Search = () => {
     const [query, setQuery] = useState("");
     const router = useRouter();
@@ -33,15 +34,26 @@ const Search = () => {
     }, [debounceQuery]);
 
     return (
-        <form className={cl.container} onSubmit={handleSearch}>
-            <Input
-                type="text"
-                value={query}
-                onChange={e => setQuery(e.target.value)}
-                placeholder="Search... &#x1F50D;&#xFE0E;"
-            />
-            {pathname !== '/films' && <Button type="submit">Lucky!</Button>}
-        </form>
+        <>
+            {pathname === '/films'
+                ?
+                <Input
+                    type="text"
+                    value={query}
+                    onChange={e => setQuery(e.target.value)}
+                    placeholder="Search... &#x1F50D;&#xFE0E;"/>
+                :
+                <form className={cl.container} onSubmit={handleSearch}>
+                    <Input
+                        type="text"
+                        value={query}
+                        onChange={e => setQuery(e.target.value)}
+                        placeholder="Search... &#x1F50D;&#xFE0E;"
+                    />
+                    <Button type="submit">Lucky!</Button>
+                </form>
+            }
+        </>
     );
 };
 
