@@ -40,7 +40,7 @@ const Search = () => {
                 onChange={e => setQuery(e.target.value)}
                 placeholder="Search... &#x1F50D;&#xFE0E;"
             />
-            <Button type="submit">Lucky!</Button>
+            {pathname !== '/films' && <Button type="submit">Lucky!</Button>}
         </form>
     );
 };
