@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.exposition {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 15px;
+}
+
+.slogan_container {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px;
+    border-radius: 20px;
+    background: var(--btn);
+    color: rgb(235, 235, 235);
+    width: 35%;
+}
+
+.slogan {
+    color: rgb(179, 179, 179);
+}
+
+.imageAutoSize {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 75%;
+}
+
+.rating {
+    color: orange;
+}
