@@ -1,6 +1,6 @@
 import cl from "./Button.module.css";
 export const Button: React.FC<React.HTMLProps<HTMLButtonElement>> = ({
-  children,
+    children,
 }) => {
-  return <button className={cl.btn}>{children}</button>;
+    return <button className={cl.btn}>{children}</button>;
 };

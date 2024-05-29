@@ -1,8 +1,9 @@
 import React from 'react';
 import cl from './Input.module.css'
-const Input = ({...children}: any) => {
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+const Input: React.FC<InputProps> = (props) => {
     return (
-        <input className={cl.myInput} {...children} />
+        <input className={cl.myInput} {...props} />
     );
 };
 

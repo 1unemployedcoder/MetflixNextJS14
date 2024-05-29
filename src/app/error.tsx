@@ -4,20 +4,20 @@ import { Button } from "@/components/ui/button/Button";
 import { useEffect } from "react";
 
 export default function Error({
-  error,
-  reset,
+    error,
+    reset,
 }: {
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  useEffect(() => {
-    console.error(error);
-  }, [error]);
+    useEffect(() => {
+        console.error(error);
+    }, [error]);
 
-  return (
-    <div>
-      <h2>Something went wrong!</h2>
-      <Button onClick={() => reset()}>Refresh</Button>
-    </div>
-  );
+    return (
+        <div>
+            <h2>Something went wrong!</h2>
+            <Button onClick={() => reset()}>Refresh</Button>
+        </div>
+    );
 }
