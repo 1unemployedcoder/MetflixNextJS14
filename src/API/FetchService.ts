@@ -14,7 +14,7 @@ export async function getNews() {
         {
             method: "GET",
             headers: {
-                "X-API-KEY": "11f800ba-3534-408a-a1d1-2c2125702ea8",
+                "X-API-KEY": "16b232b1-ed0d-4f06-9ea8-126f5bc4e51d",
                 "Content-Type": "application/json",
             },
             next: { revalidate: 3600 },
@@ -32,7 +32,7 @@ export async function getFilms() {
         {
             method: "GET",
             headers: {
-                "X-API-KEY": "11f800ba-3534-408a-a1d1-2c2125702ea8",
+                "X-API-KEY": "16b232b1-ed0d-4f06-9ea8-126f5bc4e51d",
                 "Content-Type": "application/json",
             },
             next: { revalidate: 3600 },
@@ -51,7 +51,7 @@ export const getFilm = async (id: number) => {
         {
             method: "GET",
             headers: {
-                "X-API-KEY": "11f800ba-3534-408a-a1d1-2c2125702ea8",
+                "X-API-KEY": "16b232b1-ed0d-4f06-9ea8-126f5bc4e51d",
                 "Content-Type": "application/json",
             },
         }
@@ -69,7 +69,7 @@ export const getReviews = async (id: number) => {
         {
             method: "GET",
             headers: {
-                "X-API-KEY": "11f800ba-3534-408a-a1d1-2c2125702ea8",
+                "X-API-KEY": "16b232b1-ed0d-4f06-9ea8-126f5bc4e51d",
                 "Content-Type": "application/json",
             },
             next: { revalidate: 3600 }
@@ -89,7 +89,7 @@ export const getSearchedFilm = async ({keyword = '', type = 'ALL', order = 'RATI
         {
             method: "GET",
             headers: {
-                "X-API-KEY": "11f800ba-3534-408a-a1d1-2c2125702ea8",
+                "X-API-KEY": "16b232b1-ed0d-4f06-9ea8-126f5bc4e51d",
                 "Content-Type": "application/json",
             },
         }
