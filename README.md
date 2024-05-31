@@ -1,5 +1,7 @@
 # MetflixNextJS14
 
+visit - https://metflix-next-js-14.vercel.app/
+
 MetflixNextJS14 is a project developed with the aim of practicing the latest features of Next.js 14.2, focusing on data fetching and other modern capabilities of the framework.
 
 ## Motivation
