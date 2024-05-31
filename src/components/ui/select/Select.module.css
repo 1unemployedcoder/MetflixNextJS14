@@ -1,0 +1,18 @@
+.select {
+    background-color: var(--bg);
+    color: var(--text);
+    padding: 10px;
+    border: 2px solid var(--btn);
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px 0;
+}
+
+.option {
+    background-color: var(--bg);
+    color: #ffffff;
+    padding: 10px;
+}

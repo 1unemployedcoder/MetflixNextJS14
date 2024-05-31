@@ -15,7 +15,7 @@ const Search = () => {
     const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         if (!query) return
-        const data = await getSearchedFilm(query);
+        const data = await getSearchedFilm({keyword: query});
         if (data.total) {
             router.push(`/films/${data.items[0].kinopoiskId}`);
         } else {

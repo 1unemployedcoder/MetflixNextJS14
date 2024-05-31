@@ -1,10 +1,11 @@
 import {
+    SearchType,
+    typeFetchedFilms,
+    typeFetchedNews,
     TypeFilm,
     TypeFilms,
     TypeNews,
     TypeReview,
-    typeFetchedFilms,
-    typeFetchedNews,
 } from "@/@types/AsyncTypes";
 
 export async function getNews() {
@@ -82,9 +83,9 @@ export const getReviews = async (id: number) => {
     return items as TypeReview[];
 };
 
-export const getSearchedFilm = async (title: string) => {
+export const getSearchedFilm = async ({keyword = '', type = 'ALL', order = 'RATING'}: SearchType) => {
     const res = await fetch(
-        `https://kinopoiskapiunofficial.tech/api/v2.2/films?order=RATING&type=ALL&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&keyword=${title}&page=1`,
+        `https://kinopoiskapiunofficial.tech/api/v2.2/films?order=${order}&type=${type}&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&keyword=${keyword}&page=1`,
         {
             method: "GET",
             headers: {
@@ -96,6 +97,5 @@ export const getSearchedFilm = async (title: string) => {
     if (!res.ok) {
         throw new Error("Failed to fetch data");
     }
-    const film = await res.json();
-    return film;
+    return await res.json();
 };

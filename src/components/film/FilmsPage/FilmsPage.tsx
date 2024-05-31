@@ -1,14 +1,17 @@
 import React from 'react';
 import Link from "next/link";
 import Image from "next/image";
-import {Button} from "@/components/ui/button/Button";
-import cl from './FilmsPage.module.css'
-import {TypeFilms} from "@/@types/AsyncTypes";
+import cl from './FilmsPage.module.css';
+import { TypeFilms } from "@/@types/AsyncTypes";
+import FilmFilter from "@/components/film/FilmsPage/FilmFilter/FilmFilter";
 
 type FilmsPageProps = {
     films: TypeFilms[];
+    sort: string;
+    type: string;
 };
-const FilmsPage: React.FC<FilmsPageProps> = ({films}) => {
+
+const FilmsPage: React.FC<FilmsPageProps> = ({ films, sort, type }) => {
     return (
         <div className={cl.container}>
             <h1>Фильмы</h1>
@@ -17,8 +20,7 @@ const FilmsPage: React.FC<FilmsPageProps> = ({films}) => {
                     {films.map((film) => (
                         <Link className={cl.card} key={film.kinopoiskId} href={`/films/${film.kinopoiskId}`}>
                             {film.ratingImdb && <div className={cl.rating}>{film.ratingImdb}</div>}
-                            <Image width={1000} height={1000} className={cl.image} src={film.posterUrlPreview}
-                                alt={film.nameRu}/>
+                            <Image alt={film.nameOriginal || film.nameRu} width={1000} height={1000} className={cl.image} src={film.posterUrlPreview} />
                             <div className={cl.details}>
                                 <div className={cl.title}>{film.nameRu || film.nameOriginal}</div>
                                 <div className={cl.year}>{film.year}</div>
@@ -27,8 +29,7 @@ const FilmsPage: React.FC<FilmsPageProps> = ({films}) => {
                     ))}
                 </div>
                 <div className={cl.sortContainer}>
-                    <Button>Сортировка по</Button>
-                    <Button>Тип фильма</Button>
+                    <FilmFilter sort={sort} type={type} />
                 </div>
             </div>
         </div>

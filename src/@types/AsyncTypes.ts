@@ -44,3 +44,9 @@ export interface TypeReview {
     title: string
     description: string
 }
+
+export interface SearchType {
+    order?: string
+    type?: string
+    keyword?: string
+}
