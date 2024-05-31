@@ -1,14 +1,15 @@
 "use client"
-import {useMemo} from "react";
+import React, {Suspense, useMemo} from "react";
 import {useRouter, useSearchParams} from "next/navigation";
 import cl from "./Pagination.module.css"
+import Loading from "@/app/loading";
 type Props = {
     totalPages: number
-    currentPage: number
 }
-const Pagination: React.FC<Props> = ({totalPages, currentPage}) => {
-    const router = useRouter();
+const Pagination: React.FC<Props> = ({totalPages}) => {
     const searchParams = useSearchParams();
+    const currentPage = Number(searchParams.get('page'))
+    const router = useRouter();
     const totalPagesArray = useMemo(() => {
         return Array.from({length: totalPages}, (_, index) => (index + 1))
     }, [totalPages])
@@ -28,4 +29,10 @@ const Pagination: React.FC<Props> = ({totalPages, currentPage}) => {
     );
 };
 
-export default Pagination;
+export const PaginationBar: React.FC<Props> = ({totalPages}: any) => {
+    return (
+        <Suspense fallback={<Loading />}>
+            <Pagination totalPages={totalPages} />
+        </Suspense>
+    )
+}

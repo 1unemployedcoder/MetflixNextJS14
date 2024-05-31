@@ -1,11 +1,12 @@
 "use client";
-import React, {useEffect, useState} from "react";
+import React, {Suspense, useEffect, useState} from "react";
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import cl from "./Search.module.css";
 import {getSearchedFilm} from "@/API/FetchService";
 import Input from "@/components/ui/input/Input";
 import {Button} from "@/components/ui/button/Button";
 import {useDebounce} from "@/hooks/useDebounce";
+import Loading from "@/app/loading";
 
 const Search = () => {
     const searchParams = useSearchParams();
@@ -60,4 +61,10 @@ const Search = () => {
     );
 };
 
-export default Search;
+export function Searchbar() {
+    return (
+        <Suspense fallback={<Loading />}>
+            <Search />
+        </Suspense>
+    )
+}

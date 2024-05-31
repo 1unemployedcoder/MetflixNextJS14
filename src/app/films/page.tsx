@@ -15,5 +15,5 @@ export default async function Page({ searchParams }: any) {
 
     const { items, totalPages } = await getSearchedFilm({ order: sort, type, keyword, page: currentPage });
 
-    return <FilmsPage totalPages={totalPages} currentPage={currentPage} films={items} sort={sort} type={type} />
+    return <FilmsPage totalPages={totalPages} films={items} />
 }

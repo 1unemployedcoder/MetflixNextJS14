@@ -1,13 +1,10 @@
 'use client'
 import Select from "@/components/ui/select/Select";
 import {useRouter, useSearchParams} from "next/navigation";
-import React from "react";
+import React, {Suspense} from "react";
+import Loading from "@/app/loading";
 
-type FilterProps = {
-    sort: string;
-    type: string;
-};
-const FilmFilter: React.FC<FilterProps> = ({sort, type}) => {
+const FilmFilter = () => {
     const router = useRouter();
     const searchParams = useSearchParams();
 
@@ -32,7 +29,7 @@ const FilmFilter: React.FC<FilterProps> = ({sort, type}) => {
                     { value: 'YEAR', name: 'By year' },
                 ]}
                 onChange={handleSortChange}
-                value={sort}
+                value={searchParams.get('sort')?.toString() || 'RATING'}
                 defaultValue={'RATING'}
             />
             <Select
@@ -45,11 +42,17 @@ const FilmFilter: React.FC<FilterProps> = ({sort, type}) => {
                     { value: 'ALL', name: 'All' },
                 ]}
                 onChange={handleTypeChange}
-                value={type}
+                value={searchParams.get('type')?.toString() || 'ALL'}
                 defaultValue={'ALL'}
             />
         </>
     );
 };
 
-export default FilmFilter;
+export function FilmFilterBar() {
+    return (
+        <Suspense fallback={<Loading />}>
+            <FilmFilter />
+        </Suspense>
+    )
+}
