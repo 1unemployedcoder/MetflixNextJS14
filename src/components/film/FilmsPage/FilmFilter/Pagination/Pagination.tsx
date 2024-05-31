@@ -8,7 +8,7 @@ type Props = {
 }
 const Pagination: React.FC<Props> = ({totalPages}) => {
     const searchParams = useSearchParams();
-    const currentPage = Number(searchParams.get('page'))
+    const currentPage = Number(searchParams.get('page') || 1)
     const router = useRouter();
     const totalPagesArray = useMemo(() => {
         return Array.from({length: totalPages}, (_, index) => (index + 1))
