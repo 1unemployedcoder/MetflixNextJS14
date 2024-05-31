@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MetflixNextJS14
 
-## Getting Started
+MetflixNextJS14 is a project developed with the aim of practicing the latest features of Next.js 14.2, focusing on data fetching and other modern capabilities of the framework.
 
-First, run the development server:
+## Motivation
+The primary motivation behind this project is to explore and utilize the new features of Next.js 14.2, especially the enhanced data fetching methods. By integrating the Kinopoisk API, the project demonstrates how to effectively manage and display movie data within a Next.js application.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Overview
+This project leverages Next.js 14.2's latest functionalities, including:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Static Site Generation (SSG)**: Pre-rendering pages at build time, allowing for efficient caching and quick page loads.
+- **Incremental Static Regeneration (ISR)**: Updating static content without needing a full rebuild, ensuring content freshness.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+I implement clever search for navbar search when you aren't /films route and basic query search when you are in /films route. And for data fetching im use Kinopoisk API Integration.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+![image](https://github.com/1unemployedcoder/MetflixNextJS14/assets/138623067/832a85e7-c014-42df-870e-40e482d30256)
 
-To learn more about Next.js, take a look at the following resources:
+![image](https://github.com/1unemployedcoder/MetflixNextJS14/assets/138623067/adaabdc8-283b-4ac1-949f-935966f373cb)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![image](https://github.com/1unemployedcoder/MetflixNextJS14/assets/138623067/47270894-fb88-4788-824d-23eeaf6c02a7)
