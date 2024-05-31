@@ -11,8 +11,9 @@ export default async function Page({ searchParams }: any) {
     const sort = searchParams.sort || 'RATING';
     const type = searchParams.type || 'ALL';
     const keyword = searchParams.search || '';
+    const currentPage = Number(searchParams.page) || 1
 
-    const { items } = await getSearchedFilm({ order: sort, type, keyword });
+    const { items, totalPages } = await getSearchedFilm({ order: sort, type, keyword, page: currentPage });
 
-    return <FilmsPage films={items} sort={sort} type={type} />;
+    return <FilmsPage totalPages={totalPages} currentPage={currentPage} films={items} sort={sort} type={type} />
 }

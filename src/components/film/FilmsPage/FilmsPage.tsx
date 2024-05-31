@@ -4,14 +4,17 @@ import Image from "next/image";
 import cl from './FilmsPage.module.css';
 import { TypeFilms } from "@/@types/AsyncTypes";
 import FilmFilter from "@/components/film/FilmsPage/FilmFilter/FilmFilter";
+import Pagination from "@/components/film/FilmsPage/FilmFilter/Pagination/Pagination";
 
 type FilmsPageProps = {
     films: TypeFilms[];
     sort: string;
     type: string;
+    currentPage: number
+    totalPages: number
 };
 
-const FilmsPage: React.FC<FilmsPageProps> = ({ films, sort, type }) => {
+const FilmsPage: React.FC<FilmsPageProps> = ({ films, sort, type, currentPage , totalPages}) => {
     return (
         <div className={cl.container}>
             <h1>Фильмы</h1>
@@ -32,6 +35,7 @@ const FilmsPage: React.FC<FilmsPageProps> = ({ films, sort, type }) => {
                     <FilmFilter sort={sort} type={type} />
                 </div>
             </div>
+            <Pagination totalPages={totalPages} currentPage={currentPage} />
         </div>
     );
 };

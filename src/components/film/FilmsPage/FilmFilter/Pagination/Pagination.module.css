@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    gap: 50px;
+    background: var(--btn);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.currentPage {
+    padding: 10px;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 20px;
+    background-color: var(--text);
+    color: var(--bg);
+    cursor: pointer;
+}
+
+.page {
+    padding: 10px;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.page:hover {
+    background-color: var(--text);
+    color: var(--bg);
+}

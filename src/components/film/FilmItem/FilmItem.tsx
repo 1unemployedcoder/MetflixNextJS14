@@ -8,8 +8,8 @@ const FilmItem = ({ film }: { film: TypeFilm }) => {
             <Image
                 alt={film.nameRu || film.nameOriginal}
                 src={film.posterUrlPreview}
-                width={500}
-                height={500}
+                width={1000}
+                height={1000}
                 priority
                 className={cl.imageAutoSize}
             />

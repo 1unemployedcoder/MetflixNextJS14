@@ -83,9 +83,9 @@ export const getReviews = async (id: number) => {
     return items as TypeReview[];
 };
 
-export const getSearchedFilm = async ({keyword = '', type = 'ALL', order = 'RATING'}: SearchType) => {
+export const getSearchedFilm = async ({keyword = '', type = 'ALL', order = 'RATING', page = 1}: SearchType) => {
     const res = await fetch(
-        `https://kinopoiskapiunofficial.tech/api/v2.2/films?order=${order}&type=${type}&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&keyword=${keyword}&page=1`,
+        `https://kinopoiskapiunofficial.tech/api/v2.2/films?order=${order}&type=${type}&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&keyword=${keyword}&page=${page}`,
         {
             method: "GET",
             headers: {

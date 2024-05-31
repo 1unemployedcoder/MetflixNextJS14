@@ -11,7 +11,7 @@ const nextConfig = {
                 hostname: 'avatars.mds.yandex.net'
             }
         ]
-    }
+    },
 };
 
 export default nextConfig;

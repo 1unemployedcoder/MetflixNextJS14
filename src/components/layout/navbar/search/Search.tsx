@@ -1,6 +1,6 @@
 "use client";
 import React, {useEffect, useState} from "react";
-import {usePathname, useRouter} from "next/navigation";
+import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import cl from "./Search.module.css";
 import {getSearchedFilm} from "@/API/FetchService";
 import Input from "@/components/ui/input/Input";
@@ -8,7 +8,8 @@ import {Button} from "@/components/ui/button/Button";
 import {useDebounce} from "@/hooks/useDebounce";
 
 const Search = () => {
-    const [query, setQuery] = useState("");
+    const searchParams = useSearchParams();
+    const [query, setQuery] = useState(searchParams.get('search')?.toString() || '');
     const router = useRouter();
     const debounceQuery = useDebounce(query, 1000)
     const pathname = usePathname()
@@ -24,7 +25,9 @@ const Search = () => {
         setQuery("");
     };
     const onChangeSolver = () => {
-        router.push(`/films?search=${debounceQuery}`);
+        const newParams = new URLSearchParams(searchParams.toString());
+        newParams.set('search', debounceQuery);
+        router.push(`/films?${newParams.toString()}`);
     }
 
     useEffect(() => {

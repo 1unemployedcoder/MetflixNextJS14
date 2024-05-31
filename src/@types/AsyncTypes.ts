@@ -49,4 +49,5 @@ export interface SearchType {
     order?: string
     type?: string
     keyword?: string
+    page?: number
 }
